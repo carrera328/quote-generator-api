@@ -13,4 +13,15 @@ router.get('/', async (req, res) => {
     
 })
 
+router.get('/cami', async (req, res) => {
+    try {
+        const result = await pool.query(`SELECT * FROM public."cami"`);
+        res.send(result.rows);
+    } catch(err) {
+        console.log(err);
+    }
+})
+
+
+
 module.exports = router;
