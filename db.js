@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const pool = new Pool({
   user: 'pi',
-  host: 'www.dashcatsoftware.com',
+  host: 'localhost',
   database: 'pi',
   password: 'Kepler.22b',
   port: 5432,
