@@ -15,7 +15,9 @@ const options = {
   };
 
 
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use('/', quoteRoute);
 app.use(express.json());
 
