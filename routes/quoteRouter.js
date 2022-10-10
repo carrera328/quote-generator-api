@@ -9,7 +9,7 @@ router.get('/casey', async (req, res) => {
         console.log(result);
         res.send(result.rows);
     } catch(err) {
-        console.log(err);
+        res.send(err);
     }
     
 })
