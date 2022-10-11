@@ -7,6 +7,8 @@ router.use(express.json());
 
 router.post('/quotes', async (req, res) => {   
 
+    console.log('req', req);
+
     try {
         
         if (!Object.keys(req.body).includes('type')) {
