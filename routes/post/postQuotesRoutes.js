@@ -7,7 +7,7 @@ router.use(express.json());
 
 router.post('/quotes', async (req, res) => {   
 
-    console.log('req', req);
+    console.log('req', req.body);
 
     try {
         
