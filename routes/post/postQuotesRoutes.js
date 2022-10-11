@@ -29,7 +29,8 @@ router.post('/quotes', async (req, res) => {
         
         res.send({error: {
             name: error.name,
-            message: error.message 
+            message: error.message,
+            body: req.body
         }});
     }
 })
