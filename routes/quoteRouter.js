@@ -1,37 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../db');
+const client = require('../db');
+
+
 
 router.get('/casey', async (req, res) => {
-
     try{
-        const result = await pool.query( `SELECT * FROM public."quotes"`);
+        const result = await client.query( `select * from public."quotes" where "type" = 'funny'`);
         console.log(result);
         res.send(result.rows);
     } catch(err) {
         res.send(err);
     }
-    
 })
-
-
-
-
-
-
-
-
-
-
-// router.get('/cami', async (req, res) => {
-//     try {
-//         const result = await pool.query(`SELECT * FROM public."cami"`);
-//         res.send(result.rows);
-//     } catch(err) {
-//         console.log(err);
-//     }
-// })
-
-
 
 module.exports = router;

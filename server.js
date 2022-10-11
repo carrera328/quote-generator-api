@@ -1,4 +1,5 @@
 const quoteRoute = require('./routes/quoteRouter');
+const postRoutes = require('./routes/post/postQuotesRoutes');
 const express = require('express');
 const cors = require('cors');
 const https = require('https');
@@ -17,6 +18,7 @@ const options = {
 
 app.use(cors());
 app.use('/', quoteRoute);
+app.use('/', postRoutes);
 app.use(express.json());
 
 
